@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    
+    color:#ffffff;
+    display:block;
+    font: 14px/1.3 Arial,sans-serif;
+    height:50px;
+    position:relative;
+}
+header h2{
+    font-size: 22px;
+    margin: 0px auto;
+    padding: 10px 0;
+    width: 80%;
+    text-align: center;
+    color: black;
+}
+header a, a:visited {
+    text-decoration:none;
+    
+}
+body {
+
+height: 100%;
+}
+
+#container {
+
+    width: 1000px;
+    margin: auto;
+    padding-top: 20px;
+    min-height: 700px;
+    background-color: #FFFFE2;
+}
+
+#game_object {
+    background-color: #ffffff;
+    height: 705px;
+    margin: 20px auto;
+    position: relative;
+    width: 705px;
+}
+#board div {
+    /*background: url("../images/sunflowers.jpg") no-repeat scroll 0 0 #ffffff;*/
+    cursor: pointer;
+    height: 175px;
+    line-height: 175px;
+    position: absolute;
+    text-align: center;
+    width: 175px;
+
+    /* css3 shadow */
+    -moz-box-shadow: inset 0 0 20px #555555;
+    -webkit-box-shadow: inset 0 0 20px #555555;
+    -ms-box-shadow: inset 0 0 20px #555555;
+    -o-box-shadow: inset 0 0 20px #555555;
+    box-shadow: inset 0 0 20px #555555; 
+}
+
+#main{
+    float: left;
+    width: 760px;
+    padding: 40px 20px;
+
+}
+
+#top_scores {
+
+   
+    float: right;
+    width: 180px;
+    padding: 45px 10px;
+    display: block;
+    
+}

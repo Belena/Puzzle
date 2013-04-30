@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+    <head>
+        <meta charset="utf-8" />
+        <title>Art puzzle</title>
+
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+        <div id="container">
+        <header>
+            <h2>Welcome to the art gallery game!</h2>
+        </header>
+        <div id="main">
+            <div id="game_header">
+               <img class="pictures" src="images/sunflowers.jpg" data-answer="Sunflowers 1888, Vincent van Gogh" width="200">
+               
+
+              
+                <img class="pictures" src="images/Monalisa.jpg" data-answer="Mona Lisa" width="200">
+                <img class="pictures" src="images/venus.jpg" width="200">
+                <img class="pictures" src="images/girl.jpg" width="200">
+                <img class="pictures" src="images/thekiss.jpg" width="200">
+                <img class="pictures" src="images/memory.jpg" width="200">
+                <img class="pictures" src="images/sunrise.jpg" width="200">
+                <img class="pictures" src="images/madonna.jpg" width="200">
+                <img class="pictures" src="images/trinity.jpg" width="200">
+            </div>
+            <!-- here the game will be injected -->
+
+            <div id="game_object">
+                <p>You spent <span id="timer">0</span> seconds...</p>
+                <div id="board"></div>
+            </div>
+
+            <div id="result_page">
+                <span id="answer"></span> 
+                <div id="score_form">
+                </div>
+            </div>
+        </div>
+
+        <div id="top_scores"></div>
+        </div>
+    </body>
+</html>
