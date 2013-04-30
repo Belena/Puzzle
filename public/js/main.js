@@ -138,18 +138,27 @@ function PreloadForm(){
 
 function SubmitForm(e) {
   e.preventDefault();
+ // console.log($('input#score_name').val());
+ var namevalue = $('input#score_name').val();
 
-  $.ajax({
-    url: '/scores',
-    type: 'POST',
-    data: $('form#new_score').serialize()
-  }).done(function(result_content){
-    $('div#result_page').hide();
-    $('div#game_header').show();
-    alert('Congratulations! Your score has been successfully added.');
-  })
+  if (namevalue == null || namevalue == ""){
+    alert("Enter your name!");
+  } 
+  else {
+    $.ajax({
+      url: '/scores',
+      type: 'POST',
+      data: $('form#new_score').serialize()
+    }).done(function(result_content){
+      $('div#result_page').hide();
+      $('div#game_header').show();
+      alert('Congratulations! Your score has been successfully added.');
+    })
+  }
+
   return false;
 }
+
 
 function LoadTopPlayers() {
  $.ajax({
@@ -173,6 +182,17 @@ $(document).ready(function() {
   // Hide main game panel and results page at the start
   $('div#game_object').hide();
   $('div#result_page').hide();
+
+
+//   function validateForm()
+// {
+// var x=document.forms["#new_user"]["name"].value;
+// if (x==null || x=="")
+//   {
+//   alert("Your name must be filled out");
+//   return false;
+//   }
+// }
 
   // Create main game panel
   InitPuzzle();
