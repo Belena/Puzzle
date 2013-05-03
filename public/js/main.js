@@ -1,5 +1,5 @@
 var EmptySquare = 16;
-var square_size = 175;
+var square_size = 145;
 var zi = 1; // We increment z-index each time a square is shifted
 var current_timer = 0;
 
@@ -125,16 +125,19 @@ function ShowTimer() {
 function PreloadForm(){
   $.ajax({
     url: '/scores/new',
-    type: 'GET'
-  }).done(function(result_content) {
+    type: 'GET',
+    error: AjaxError,
+    success: function(result_content) {
     $('div#score_form').html(result_content);
     $('form#new_score').on('submit', SubmitForm);
 
+    }
   });
 }
 
-
-
+function AjaxError() {
+  alert('Something went wrong... AJAX failed!');
+}
 
 function SubmitForm(e) {
   e.preventDefault();
@@ -148,12 +151,17 @@ function SubmitForm(e) {
     $.ajax({
       url: '/scores',
       type: 'POST',
-      data: $('form#new_score').serialize()
-    }).done(function(result_content){
-      $('div#result_page').hide();
-      $('div#game_header').show();
-      alert('Congratulations! Your score has been successfully added.');
-    })
+      data: $('form#new_score').serialize(),
+      error: AjaxError,
+      success: function() {
+        $('div#result_page').hide();
+
+        $('div#game_header').show();
+
+        alert('Congratulations! Your score has been successfully added.');
+      }
+    });
+    
   }
 
   return false;
@@ -163,9 +171,11 @@ function SubmitForm(e) {
 function LoadTopPlayers() {
  $.ajax({
     url: '/scores',
-    type: 'GET'
-  }).done(function(result_content) {
+    type: 'GET',
+    error: AjaxError,
+    success: function(result_content) {
     $('div#top_scores').html(result_content);
+    }
   }); 
 }
 
@@ -184,16 +194,6 @@ $(document).ready(function() {
   $('div#result_page').hide();
 
 
-//   function validateForm()
-// {
-// var x=document.forms["#new_user"]["name"].value;
-// if (x==null || x=="")
-//   {
-//   alert("Your name must be filled out");
-//   return false;
-//   }
-// }
-
   // Create main game panel
   InitPuzzle();
 
@@ -208,6 +208,8 @@ $(document).ready(function() {
 
       $('input#score_time').val(current_timer);
       $('div#game_object').hide(1000);
+      $('div#header').hide();
+      $('div#top_scores').hide();
       $('div#result_page').show(1000);
     }
   });
@@ -218,7 +220,7 @@ $(document).ready(function() {
 
     // Get a description for the chosen picture
     var picinfo = $(this).data("answer");
-    $("span#answer").html(picinfo);
+    $("div#answer").html(picinfo);
     
     timer = setInterval(ShowTimer, 1000);
 
