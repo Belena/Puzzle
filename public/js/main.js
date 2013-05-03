@@ -1,5 +1,5 @@
 var EmptySquare = 16;
-var square_size = 145;
+var square_size = 165;
 var zi = 1; // We increment z-index each time a square is shifted
 var current_timer = 0;
 
@@ -157,8 +157,10 @@ function SubmitForm(e) {
         $('div#result_page').hide();
 
         $('div#game_header').show();
+        $('div#top_scores').show();
+        $('div#header').fadeIn(10000);
 
-        alert('Congratulations! Your score has been successfully added.');
+        alert('Congratulations, '+ namevalue + '! Your score has been successfully added.');
       }
     });
     
