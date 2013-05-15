@@ -1,12 +1,27 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "cool_font";
+    
     font-size: 20px;
 }
+
 p {
     color: #565656;
+
+
 }
+
+a {
+    font-size: 12px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    color:#565656;
+    text-decoration: underline;
+    position: relative;
+    left: 850px;
+
+}
+ a:hover {color: rgb(195, 174, 63)} 
+
 @font-face {
     font-family: cool_font;
     src: url("/Playball.ttf");
@@ -22,8 +37,8 @@ header {
     margin-bottom: 20px;
 }
 header h1{
-    font-size: 40px;
-    
+    font-size: 45px;
+    font-family: "cool_font", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     margin: 0px auto;
     padding: 10px 0;
     width: 80%;
@@ -36,9 +51,10 @@ header a, a:visited {
 }
 body {
 
-    /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 200;
-    font-size: 17px;
+    font-style: italic;
+    font-size: 14px;
     color: #565656;
     height: 100%;
 }
@@ -53,10 +69,9 @@ h2 {
     width: 90%;
     margin: auto;
     padding-top: 20px;
-    min-height: 900px;
+    min-height: 950px;
     height: 100%;
     overflow: hidden;
-    
     background-image: url(/images/frame1.jpg);
     background-size: 100% 100%;
     }
@@ -72,14 +87,15 @@ h2 {
 }
 
 
+
 #board div {
     
     cursor: pointer;
-    height: 175px;
-    line-height: 175px;
+    height: 160px;
+    line-height: 160px;
     position: absolute;
     text-align: center;
-    width: 175px;
+    width: 160px;
 
     /* css3 shadow */
     -moz-box-shadow: inset 0 0 20px #555555;
@@ -120,11 +136,13 @@ div#score_form {
 
 
 #main{
+    position: relative;
     float: right;
+    right: 8%;
     width: 60%;
     padding: 40px 0 40px 0;
-    margin-right: 60px;
-    margin-right: 85px;
+    /*margin-right: 60px;*/
+    
     
 
 
@@ -135,7 +153,8 @@ div#score_form {
     clear: both;
 }
 
-#game_header {
+#gallery {
+    position: relative;
     width: 100%;
     height: 100%;
     margin-top: 25px;
@@ -146,24 +165,18 @@ div#score_form {
 
 #top_scores {
 
-   
+   position: relative;
     float: left;
+    left: 8%;
     width: 17%;
     padding: 10px 10px;
     display: block;
-    margin: 65px 5px 20px 95px;
+    margin: 65px 5px 20px 5px;
     
     -moz-box-shadow: 2px 2px 40px 5px rgba(195, 174, 63, 0.75);
     -webkit-box-shadow: 2px 2px 40px 5px rgba(195, 174, 63, 0.75);
     box-shadow: 2px 2px 40px 5px rgba(195, 174, 63, 0.75);
 
-    /*or this one?*/
-
-   /* -moz-box-shadow:  0 0 50px 5px #555555;
-    -webkit-box-shadow:  0 0 50px 5px #555555;
-    -ms-box-shadow:  0 0 50px 5px #555555;
-    -o-box-shadow:  0 0 50px 5px  #555555;
-    box-shadow:  0 0 60px 5px #555555;*/
 
     
 }
@@ -174,13 +187,6 @@ img.pictures{
     -webkit-box-shadow: 2px 2px 40px 5px rgba(195, 174, 63, 0.75);
     box-shadow: 2px 2px 40px 5px rgba(195, 174, 63, 0.75);
 
-   /*or this one?*/
-
-   /*-moz-box-shadow:  0 0 20px 5px #555555;
-    -webkit-box-shadow:  0 0 20px 5px #555555;
-    -ms-box-shadow:  0 0 20px 5px #555555;
-    -o-box-shadow:  0 0 20px 5px  #555555;
-    box-shadow:  0 0 20px 5px #555555;*/
 
 }
 
